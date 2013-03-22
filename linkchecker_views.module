@@ -1,4 +1,6 @@
- /**
+<?php
+
+/**
  * Implements hook_views_api().
  */
 function linkchecker_views_views_api() {
