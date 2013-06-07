@@ -1,10 +1,7 @@
-name = Linkchecker Views
+name = Link checker Views
 description = "Offers a basic implementation of linkchecker reports using views"
-dependencies[] = linkchecker
-project = "linkchecker_views"
-version = "7.x-1.x"
 core = 7.x
+dependencies[] = linkchecker
 
 ; Views handlers
 files[] = views/linkchecker_views_handler_filter_in_code.inc
-
