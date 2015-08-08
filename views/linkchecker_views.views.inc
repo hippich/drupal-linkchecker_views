@@ -213,6 +213,41 @@ function linkchecker_views_views_data() {
     ),
   );
 
+  $data['linkchecker_node'] = array(
+    'table' => array(
+      'group' => t('Broken links'),
+      'join' => array(
+        'linkchecker_link' => array(
+          'left_field' => 'lid',
+          'field' => 'lid',
+        ),
+      ),
+    ),
+    'nid' => array(
+      'title' => t('Node ID'),
+      'help' => t("The NID containing the link."),
+      'field' => array(
+        'handler' => 'views_handler_field_numeric',
+        'click sortable' => TRUE,
+      ),
+      'sort' => array(
+        'handler' => 'views_handler_sort',
+      ),
+      'filter' => array(
+        'handler' => 'views_handler_filter_numeric',
+      ),
+      // Relationship to nodes.
+      'relationship' => array(
+        'base' => 'node',
+        'base field' => 'nid',
+        'handler' => 'views_handler_relationship',
+        'label' => t('Node'),
+        'title' => t('Node'),
+        'help' => t('The Node containing a link.'),
+      ),
+    ),
+  );
+
   return $data;
 }
 
@@ -486,10 +521,10 @@ function linkchecker_views_views_default_views() {
     t('Items per page'),
     t('- All -'),
     t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
+    t('Â« first'),
+    t('< previous'),
+    t('next >'),
+    t('last Â»'),
     t('No broken links have been found.'),
     t('Edit link settings'),
     t('.'),
